@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <title>Fertilizers &amp; Pesticides — Mindanao AgriPlus Corp</title>
+  <meta name="description" content="Premium inorganic and organic fertilizers distributed by Mindanao AgriPlus Corporation. Nitrogen, phosphate, potassium, and micronutrient fertilizers for Philippine farms." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { forest:'#2d7c2d', fresh:'#8bc34b', earth:'#96695a', harvest:'#ffc105' },
+          fontFamily: { inter:['Inter','sans-serif'], roboto:['Roboto','sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Roboto', sans-serif; }
+    h1,h2,h3,h4,h5,h6,nav,button { font-family: 'Inter', sans-serif; }
+    .modal-backdrop { display:none; position:fixed; inset:0; z-index:200; background:rgba(0,0,0,0.80); align-items:center; justify-content:center; padding:1rem; }
+    .modal-backdrop.open { display:flex; }
+    .img-zoom { overflow:hidden; }
+    .img-zoom img { transition: transform 0.5s ease; }
+    .img-zoom:hover img { transform: scale(1.07); }
+  </style>
+</head>
+<body class="bg-white text-gray-700">
+
+<!-- ═══════════════════════════════════════ NAVBAR ═══════════════════════════════════════ -->
+<nav class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
+  <div class="container mx-auto px-4 lg:px-6">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      <a href="index.html" class="flex-shrink-0">
+        <img src="assets/logo-CxRfD1_g.png" alt="Mindanao Agriplus Corp Logo" class="h-10 lg:h-14 object-contain" />
+      </a>
+      <div class="hidden lg:flex items-center space-x-8">
+        <a href="index.html"           class="font-medium text-sm text-gray-600 hover:text-forest transition-colors">Home</a>
+        <a href="index.html#products"  class="font-medium text-sm text-forest border-b-2 border-forest pb-0.5">Products</a>
+        <a href="index.html#about"     class="font-medium text-sm text-gray-600 hover:text-forest transition-colors">About</a>
+        <a href="index.html#contact"   class="font-medium text-sm text-gray-600 hover:text-forest transition-colors">Contact</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button onclick="openModal()" class="hidden sm:inline-flex bg-forest text-white hover:bg-green-800 font-semibold px-5 py-2.5 rounded-full transition-colors text-sm">Get Quote</button>
+        <button id="menu-btn" onclick="toggleMobile()" class="lg:hidden p-1">
+          <svg id="icon-menu"  class="text-gray-700 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="icon-close" class="text-gray-700 w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden lg:hidden pb-4 space-y-1 border-t border-gray-100 pt-3">
+      <a href="index.html"          class="block py-2 px-2 text-sm font-medium text-gray-700 hover:text-forest">Home</a>
+      <a href="index.html#products" class="block py-2 px-2 text-sm font-medium text-forest">Products</a>
+      <a href="index.html#about"    class="block py-2 px-2 text-sm font-medium text-gray-700 hover:text-forest">About</a>
+      <a href="index.html#contact"  class="block py-2 px-2 text-sm font-medium text-gray-700 hover:text-forest">Contact</a>
+      <div class="pt-2"><button onclick="openModal()" class="w-full bg-forest text-white font-semibold py-2.5 rounded-full text-sm">Get Quote</button></div>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════ HERO ═══════════════════════════════════════════ -->
+<section class="relative overflow-hidden" style="height:60vh;min-height:400px">
+  <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1600&q=80"
+       alt="Fertilizers and Pesticides"
+       class="absolute inset-0 w-full h-full object-cover" />
+  <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/20"></div>
+  <div class="absolute inset-0 flex flex-col justify-between container mx-auto px-6 py-8 lg:py-10">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-white/60 text-xs font-medium">
+      <a href="index.html" class="hover:text-white transition-colors">Home</a>
+      <span class="text-white/30">›</span>
+      <a href="index.html#products" class="hover:text-white transition-colors">Products</a>
+      <span class="text-white/30">›</span>
+      <span class="text-white/90">Fertilizers &amp; Pesticides</span>
+    </nav>
+    <!-- Title -->
+    <div class="pb-2">
+      <span class="inline-block bg-forest text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">
+        🧪 Fertilizers &amp; Pesticides
+      </span>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-3 leading-tight tracking-tight drop-shadow-lg">
+        Premium Fertilizer<br>&amp; Pesticide Solutions
+      </h1>
+      <p class="text-white/85 text-base lg:text-lg max-w-2xl drop-shadow-md">
+        Comprehensive range of inorganic and organic fertilizers designed for Philippine soil conditions — imported and distributed by Mindanao AgriPlus Corporation.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════ INTRO STRIP ═════════════════════════════════════ -->
+<div class="bg-[#f8faf8] border-b border-gray-100">
+  <div class="container mx-auto px-6 py-6 flex flex-wrap items-center gap-6 lg:gap-12">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-forest/10 rounded-xl flex items-center justify-center">
+        <svg class="w-5 h-5 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      </div>
+      <div><p class="text-xs text-gray-400 uppercase tracking-wide font-semibold">Products</p><p class="text-sm font-bold text-gray-900">15+ Varieties</p></div>
+    </div>
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-fresh/15 rounded-xl flex items-center justify-center">
+        <svg class="w-5 h-5 text-fresh" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
+      </div>
+      <div><p class="text-xs text-gray-400 uppercase tracking-wide font-semibold">Sources</p><p class="text-sm font-bold text-gray-900">China, Russia, Indonesia</p></div>
+    </div>
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-harvest/20 rounded-xl flex items-center justify-center">
+        <svg class="w-5 h-5 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+      </div>
+      <div><p class="text-xs text-gray-400 uppercase tracking-wide font-semibold">Distributor</p><p class="text-sm font-bold text-gray-900">Mindanao AgriPlus Corp</p></div>
+    </div>
+    <div class="ml-auto hidden md:block">
+      <button onclick="openModal('Fertilizers & Pesticides')"
+        class="bg-forest text-white font-semibold px-6 py-2.5 rounded-full hover:bg-green-800 transition-colors text-sm">
+        Request Quote
+      </button>
+    </div>
+    <!-- Mobile CTA -->
+    <div class="w-full md:hidden pt-1">
+      <button onclick="openModal('Fertilizers & Pesticides')"
+        class="w-full bg-forest text-white font-semibold py-3 rounded-full hover:bg-green-800 transition-colors text-sm">
+        Request a Quote
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ PRODUCT LIST ════════════════════════════════════ -->
+<section class="py-16 lg:py-24 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="max-w-3xl mb-12">
+      <p class="text-forest text-xs font-bold uppercase tracking-[0.2em] mb-3">Product Catalogue</p>
+      <h2 class="font-bold text-3xl lg:text-4xl text-gray-900 mb-4 tracking-tight">Our Fertilizer Products</h2>
+      <p class="text-gray-500 leading-relaxed">
+        All fertilizers are imported and distributed under the Lucky Planters and Mindanao AgriPlus brands, registered with the Fertilizer and Pesticide Authority (FPA) of the Philippines.
+      </p>
+    </div>
+
+    <!-- Nitrogen Fertilizers -->
+    <div class="mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="h-px flex-1 bg-gray-100"></div>
+        <span class="text-xs font-bold uppercase tracking-widest text-gray-400 px-3">Nitrogen Fertilizers</span>
+        <div class="h-px flex-1 bg-gray-100"></div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="flex items-start gap-4 bg-white rounded-2xl p-5 border border-gray-100 hover:shadow-md hover:border-fresh/30 transition-all">
+          <div class="w-9 h-9 bg-forest/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-4 h-4 text-forest" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 text-sm">Urea Prilled &amp; Granular 46-0-0</h4>
+            <p class="text-xs text-gray-400 mt-1">Inorganic · N = 46%</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-white rounded-2xl p-5 border border-gray-100 hover:shadow-md hover:border-fresh/30 transition-all">
+          <div class="w-9 h-9 bg-forest/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-4 h-4 text-forest" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 text-sm">Urea Prilled Low Biuret 46-0-0</h4>
+            <p class="text-xs text-gray-400 mt-1">Inorganic · N = 46% · Low Biuret</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-white rounded-2xl p-5 border border-gray-100 hover:shadow-md hover:border-fresh/30 transition-all">
+          <div class="w-9 h-9 bg-forest/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-4 h-4 text-forest" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 text-sm">Ammonium Sulphate 21-0-0-24S</h4>
+            <p class="text-xs text-gray-400 mt-1">Inorganic · N = 21%, S = 24%</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-white rounded-2xl p-5 border border-gray-100 hover:shadow-md hover:border-fresh/30 transition-all">
+          <div class="w-9 h-9 bg-forest/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-4 h-4 text-forest" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 text-sm">Ammonium Chloride 25-0-0</h4>
+            <p class="text-xs text-gray-400 mt-1">Inorganic · N = 25%</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-white rounded-2xl p-5 border border-gray-100 hover:shadow-md hover:border-fresh/30 transition-all">
+          <div class="w-9 h-9 bg-forest/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-4 h-4 text-forest" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 text-sm">NutriLeaf Calcium Ammonium Nitrate</h4>
+            <p class="text-xs text-gray-400 mt-1">Water Soluble · N ≈ 15.5%, Ca ≈ 19%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phosphate Fertilizers -->
+    <div class="mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="h-px flex-1 bg-gray-100"></div>
+        <span class="text-xs font-bold uppercase tracking-widest text-gray-400 px-3">Phosphate Fertilizers</span>
+        <div class="h-px flex-1 bg-gray-100"></div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="flex items-start gap-4 bg-white rounded-2xl p-5 border border-gray-100 hover:shadow-md hover:border-fresh/30 transition-all">
+          <div class="w-9 h-9 bg-forest/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-4 h-4 text-forest" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 text-sm">Di-ammonium Phosphate (DAP) 18-46-0</h4>
+            <p class="text-xs text-gray-400 mt-1">Inorganic · N = 18%, P₂O₅ = 46%</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-white rounded-2xl p-5 border border-gray-100 hover:shadow-md hover:border-fresh/30 transition-all">
+          <div class="w-9 h-9 bg-forest/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-4 h-4 text-forest" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 text-sm">Ammonium Phosphate 16-20-0-12S</h4>
+            <p class="text-xs text-gray-400 mt-1">Inorganic · N = 16%, P₂O₅ = 20%, S = 12%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Potassium Fertilizers -->
+    <div class="mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="h-px flex-1 bg-gray-100"></div>
+        <span class="text-xs font-bold uppercase tracking-widest text-gray-400 px-3">Potassium Fertilizers</span>
+        <div class="h-px flex-1 bg-gray-100"></div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="flex items-start gap-4 bg-white rounded-2xl p-5 border border-gray-100 hover:shadow-md hover:border-fresh/30 transition-all">
+          <div class="w-9 h-9 bg-forest/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-4 h-4 text-forest" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 text-sm">Muriate of Potash (MOP) 0-0-60</h4>
+            <p class="text-xs text-gray-400 mt-1">Inorganic · K₂O = 60% · Origin: Russia</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Complete / Complex -->
+    <div class="mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="h-px flex-1 bg-gray-100"></div>
+        <span class="text-xs font-bold uppercase tracking-widest text-gray-400 px-3">Complete / Complex</span>
+        <div class="h-px flex-1 bg-gray-100"></div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="flex items-start gap-4 bg-white rounded-2xl p-5 border border-gray-100 hover:shadow-md hover:border-fresh/30 transition-all">
+          <div class="w-9 h-9 bg-forest/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-4 h-4 text-forest" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 text-sm">Complete 14-14-14-11S</h4>
+            <p class="text-xs text-gray-400 mt-1">Inorganic · N = 14%, P₂O₅ = 14%, K₂O = 14%, S = 11%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Secondary & Micronutrients -->
+    <div>
+      <div class="flex items-center gap-3 mb-6">
+        <div class="h-px flex-1 bg-gray-100"></div>
+        <span class="text-xs font-bold uppercase tracking-widest text-gray-400 px-3">Secondary &amp; Micronutrients</span>
+        <div class="h-px flex-1 bg-gray-100"></div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="flex items-start gap-4 bg-white rounded-2xl p-5 border border-gray-100 hover:shadow-md hover:border-fresh/30 transition-all">
+          <div class="w-9 h-9 bg-forest/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-4 h-4 text-forest" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 text-sm">Kieserite Granular</h4>
+            <p class="text-xs text-gray-400 mt-1">Inorganic · MgO = 26%, S = 14%</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-white rounded-2xl p-5 border border-gray-100 hover:shadow-md hover:border-fresh/30 transition-all">
+          <div class="w-9 h-9 bg-forest/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-4 h-4 text-forest" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 text-sm">Epsom Salt (Magnesium Sulfate Heptahydrate)</h4>
+            <p class="text-xs text-gray-400 mt-1">Inorganic · MgO ≈ 16%, S ≈ 13%</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-white rounded-2xl p-5 border border-gray-100 hover:shadow-md hover:border-fresh/30 transition-all">
+          <div class="w-9 h-9 bg-forest/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-4 h-4 text-forest" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 text-sm">Zinc Sulphate Heptahydrate &amp; Dolomite</h4>
+            <p class="text-xs text-gray-400 mt-1">Inorganic · Zn = 21% (ZnSO₄·7H₂O)</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-white rounded-2xl p-5 border border-gray-100 hover:shadow-md hover:border-fresh/30 transition-all">
+          <div class="w-9 h-9 bg-forest/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-4 h-4 text-forest" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 text-sm">Ferrous Sulphate Heptahydrate</h4>
+            <p class="text-xs text-gray-400 mt-1">Inorganic · Fe = 19% min</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-white rounded-2xl p-5 border border-gray-100 hover:shadow-md hover:border-fresh/30 transition-all">
+          <div class="w-9 h-9 bg-forest/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-4 h-4 text-forest" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 text-sm">Calcic Lime</h4>
+            <p class="text-xs text-gray-400 mt-1">Inorganic · Ca = 35% min</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-white rounded-2xl p-5 border border-gray-100 hover:shadow-md hover:border-fresh/30 transition-all">
+          <div class="w-9 h-9 bg-forest/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-4 h-4 text-forest" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900 text-sm">Rock Phosphate &amp; Gypsum Powder (SoilPro)</h4>
+            <p class="text-xs text-gray-400 mt-1">Inorganic · Ca = 21%, S = 17% · Thailand</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ PRODUCT GALLERY ═══════════════════════════════════ -->
+<section class="py-16 lg:py-24 bg-[#f8faf8]">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
+      <div>
+        <p class="text-forest text-xs font-bold uppercase tracking-[0.2em] mb-2">Product Gallery</p>
+        <h2 class="font-bold text-3xl lg:text-4xl text-gray-900 tracking-tight">Our Fertilizer Products</h2>
+      </div>
+      <button onclick="openModal('Fertilizers & Pesticides')"
+        class="inline-flex items-center gap-2 border border-forest text-forest font-semibold px-5 py-2.5 rounded-full hover:bg-forest hover:text-white transition-all text-sm self-start sm:self-auto">
+        Request a Quote
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </button>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 lg:gap-4">
+      <div class="img-zoom aspect-[3/4] rounded-2xl shadow-sm overflow-hidden"><img src="assets/1-CjQaL3Up.png"  alt="Kieserite Granular"              class="w-full h-full object-cover" /></div>
+      <div class="img-zoom aspect-[3/4] rounded-2xl shadow-sm overflow-hidden"><img src="assets/2-BK_hbmsS.png"  alt="Calcic Lime"                    class="w-full h-full object-cover" /></div>
+      <div class="img-zoom aspect-[3/4] rounded-2xl shadow-sm overflow-hidden"><img src="assets/3-BqjcEOcE.png"  alt="Complete 14-14-14"              class="w-full h-full object-cover" /></div>
+      <div class="img-zoom aspect-[3/4] rounded-2xl shadow-sm overflow-hidden"><img src="assets/4-D8icfO2c.png"  alt="SoilPro Gypsum Powder"          class="w-full h-full object-cover" /></div>
+      <div class="img-zoom aspect-[3/4] rounded-2xl shadow-sm overflow-hidden"><img src="assets/5-Dcghc5Zh.png"  alt="Urea Prilled Low Biuret"        class="w-full h-full object-cover" /></div>
+      <div class="img-zoom aspect-[3/4] rounded-2xl shadow-sm overflow-hidden"><img src="assets/6-CACZ7P3d.png"  alt="Ferrous Sulphate Heptahydrate"  class="w-full h-full object-cover" /></div>
+      <div class="img-zoom aspect-[3/4] rounded-2xl shadow-sm overflow-hidden"><img src="assets/7-DKhXmpvk.png"  alt="Muriate of Potash 0-0-60"       class="w-full h-full object-cover" /></div>
+      <div class="img-zoom aspect-[3/4] rounded-2xl shadow-sm overflow-hidden"><img src="assets/8-DZXgBo1G.png"  alt="Ammonium Chloride 25-0-0"       class="w-full h-full object-cover" /></div>
+      <div class="img-zoom aspect-[3/4] rounded-2xl shadow-sm overflow-hidden"><img src="assets/13-Nxeh24sD.png" alt="Zinc Sulphate Heptahydrate"      class="w-full h-full object-cover" /></div>
+      <div class="img-zoom aspect-[3/4] rounded-2xl shadow-sm overflow-hidden"><img src="assets/14-CLSxxX5J.png" alt="Urea Prilled 46-0-0"             class="w-full h-full object-cover" /></div>
+      <div class="img-zoom aspect-[3/4] rounded-2xl shadow-sm overflow-hidden"><img src="assets/15-BBfrPIsH.png" alt="Ammonium Phosphate 16-20-0"      class="w-full h-full object-cover" /></div>
+      <div class="img-zoom aspect-[3/4] rounded-2xl shadow-sm overflow-hidden"><img src="assets/16-CPiP4TPg.png" alt="NutriLeaf Calcium Ammonium Nitrate" class="w-full h-full object-cover" /></div>
+      <div class="img-zoom aspect-[3/4] rounded-2xl shadow-sm overflow-hidden"><img src="assets/17-BLPFfi6d.png" alt="Epsom Salt"                      class="w-full h-full object-cover" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════ QUOTE CTA ══════════════════════════════════════ -->
+<section class="bg-forest py-20 lg:py-28">
+  <div class="container mx-auto px-6 text-center">
+    <p class="text-fresh text-xs font-bold uppercase tracking-[0.25em] mb-3">Get Started</p>
+    <h2 class="font-bold text-3xl lg:text-4xl text-white mb-4 tracking-tight">Interested in Our Fertilizers?</h2>
+    <p class="text-white/70 text-lg mb-8 max-w-xl mx-auto">
+      Contact us for pricing, availability, and bulk order inquiries. We serve farms and agri-businesses across the Philippines.
+    </p>
+    <a href="mailto:admin@mindanaoagriplus.com?subject=Quote Request - Fertilizers & Pesticides"
+       class="inline-flex items-center gap-3 bg-harvest text-gray-900 font-bold px-8 py-4 rounded-full text-base hover:bg-yellow-400 transition-colors shadow-lg">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      Request a Quote
+    </a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ FOOTER ════════════════════════════════════════ -->
+<footer class="bg-gray-900 py-8">
+  <div class="container mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="assets/logo-CxRfD1_g.png" alt="Logo" class="h-8 brightness-0 invert opacity-70" />
+      <span class="text-white/60 text-sm">Mindanao AgriPlus Corporation</span>
+    </a>
+    <div class="flex items-center gap-6 text-sm text-white/50">
+      <a href="index.html#products"  class="hover:text-white transition-colors">Products</a>
+      <a href="index.html#about"     class="hover:text-white transition-colors">About</a>
+      <a href="index.html#contact"   class="hover:text-white transition-colors">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating Quote Button -->
+<div class="fixed bottom-6 right-6 z-50">
+  <button onclick="openModal()"
+    class="bg-harvest text-gray-900 w-14 h-14 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center justify-center"
+    title="Request Quote">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+  </button>
+</div>
+
+<!-- Quote Modal -->
+<div id="quote-modal" class="modal-backdrop" onclick="if(event.target===this)closeModal()">
+  <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md mx-4 overflow-hidden">
+    <div class="flex items-center justify-between px-6 py-5 border-b border-gray-100">
+      <h3 class="text-base font-bold text-gray-900">Request a Quote</h3>
+      <button onclick="closeModal()" class="text-gray-400 hover:text-gray-700 transition-colors p-1">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="p-6">
+      <div class="bg-[#f8faf8] rounded-xl p-6 text-center">
+        <div class="w-14 h-14 bg-forest/10 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="h-7 w-7 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </div>
+        <h4 class="text-lg font-bold text-gray-900 mb-2">Request Your Quote</h4>
+        <p class="text-gray-500 text-sm mb-4">Email us with your requirements and we'll get back to you promptly.</p>
+        <a id="modal-email-link"
+           href="mailto:admin@mindanaoagriplus.com?subject=Quote Request - Fertilizers %26 Pesticides"
+           class="inline-block text-base font-bold text-forest hover:text-green-800 transition-colors">
+          admin@mindanaoagriplus.com
+        </a>
+        <p class="text-xs text-gray-400 mt-4">Include product type, quantity, and delivery location for faster processing.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openModal(type) {
+    const link = document.getElementById('modal-email-link');
+    link.href = `mailto:admin@mindanaoagriplus.com?subject=${encodeURIComponent('Quote Request' + (type ? ' - ' + type : ' - Fertilizers & Pesticides'))}`;
+    document.getElementById('quote-modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('quote-modal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  function toggleMobile() {
+    const menu = document.getElementById('mobile-menu');
+    document.getElementById('icon-menu').classList.toggle('hidden');
+    document.getElementById('icon-close').classList.toggle('hidden');
+    menu.classList.toggle('hidden');
+  }
+</script>
+</body>
+</html>

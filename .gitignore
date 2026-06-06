@@ -1,0 +1,6 @@
+.DS_Store
+*.zip
+Videos/
+Sack designs/
+ElevenLabs_image_*.png
+.claude/
